@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>The Interactive Nature Book</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+        <meta name="keywords" content="flip, pages, flipboard, layout, responsive, web, web design, grid, ipad, jquery, css3, 3d, perspective, transitions, transform" />
+        <meta name="author" content="" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="shortcut icon" href="../favicon.ico"> 
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="js/modernizr.custom.08464.js"></script>
+		<script id="pageTmpl" type="text/x-jquery-tmpl">
+			<div class="${theClass}" style="${theStyle}">
+				<div class="front">
+					<div class="outer">
+						<div class="content" style="${theContentStyleFront}">
+							<div class="inner">{{html theContentFront}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="back">
+					<div class="outer">
+						<div class="content" style="${theContentStyleBack}">
+							<div class="inner">{{html theContentBack}}</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</script>
+	    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFfYFkeCWqWEstg57QbN6JpeVQ2cNIp68&sensor=false"></script>
+    </head>
+    <body>
+		
+		<header class="main-title">
+			<h1><strong>The Interactive Nature Book</strong></h1>
+			<p>PAT598 A Dialogue of the Senses</p>
+			<p><strong>By Chengqi Zhu</strong></p>
+			
+			<p style="color:gray">Swipe or drag to flip the pages, click to open items </p>
+		</header>
+		
+		<div id="flip" class="container">
+		
+			<div class="f-page f-cover">
+				<div class="cover-elements">
+					<!-- <div class="logo">
+						Pageflip
+						<a class="f-ref" href="http://www.flickr.com/photos/nasahqphoto/">Images by NASA HQ Photo</a>
+					</div>
+					<h1>Spacy Flipping Pages with CSS3 &amp; jQuery <span>Inspired by <a href="http://flipboard.com/">Flipboard</a></span></h1>
+					<div class="f-cover-story"><span>Cover Story</span>Shuttle Enterprise Flight to New York</div> -->
+					<div class="f-cover-title-top">Interactive<br/>Nature<br/>Book</div>
+					<div class="f-cover-title-bottom">Go and explore the world.</div>
+				</div>
+				<div class="f-cover-flip">&lt; Flip</div>
+			</div>
+			
+			<div class="f-page">
+				<div class="f-title">
+					<a></a>
+					<h2>River&Lake Collection</h2>
+					<a></a>
+				</div>
+				<div class="box w-25 h-60" data-lat="51.323047" data-lng="-116.185929" data-heading="193" data-pitch="10" data-sound="moraine.ogg">
+					<div class="img-cont img-moraine"></div>
+					<h3>Banff National Park: Moraine Lake</h3>
+					<p>Moraine Lake is a glacially-fed lake in Banff National Park, 14 kilometres (8.7 mi) outside the Village of Lake Louise, Alberta, Canada. It is situated in the Valley of the Ten Peaks, at an elevation of approximately 6,183 feet (1,885 m). The lake has a surface area of .5 square kilometres (0.19 sq mi). </p>
+				</div>
+				<div class="box w-50 h-60 box-b-l box-b-r" data-lat="-3.137668" data-lng="-60.493232" data-heading="165" data-pitch="10" data-sound="rionegro.ogg">
+					<div class="img-cont img-rionegro"></div>
+					<h3>Rio Negro River</h3>
+					<p>The Rio Negro (or Black River) is the largest tributary of the Amazon River and the largest blackwater river in the world, and one of the world's ten largest rivers in average discharge. It has its sources along the watershed between the Orinoco and the Amazon basins, and also connects with the Orinoco by way of the Casiquiare canal in southern Venezuela. In Colombia, where the Rio Negro's sources are located, it is called the Guainía River. Its main affluent is the Vaupés, which disputes with the headwaters of the Guaviare branch of the Orinoco, the drainage of the eastern slope of the Andes of Colombia. The Rio Negro flows into the Rio Solimões to form the Amazon River South of Manaus, Brazil.</p>
+				</div>
+				<div class="box w-25 h-60" data-lat="48.44603" data-lng="18.976014" data-heading="39" data-pitch="5" data-sound="stiavnica.ogg">
+					<div class="img-cont img-stiavnica"></div>
+					<h3>Water Reservoirs in the Štiavnica Mountains</h3>
+					<p>Tajchy (singular: tajch, from German teich) are artificial water reservoirs in the Štiavnica Mountains, in central Slovakia. Most of them were built in order to provide energy for the silver mines of Banská Štiavnica in the 18th century. At their height, tajchy comprised a sophisticated system of 60 reservoirs, connected to each other by more than 100 km of channels and underground tunnels. 24 artificial lakes still exist and serve recreational purposes. Because of their historical value, tajchy were proclaimed by the UNESCO to be a World Heritage Site on December 11, 1993, together with the town of Banská Štiavnica and technical historical monuments in its surroundings.</p>
+				</div>
+				<div class="box w-50 h-40 box-b-r title-top box-img-left" data-lat="36.710025" data-lng="-111.709371" data-heading="185" data-pitch="15" data-sound="colorado.ogg">
+					<div class="img-cont img-colorado"></div>
+					<h3>Colorado River</h3>
+					<p>The Colorado River is the principal river of the southwestern United States and northwest Mexico. The 1,450-mile (2,330 km) river drains an expansive, arid watershed that encompasses parts of seven U.S. and two Mexican states. Rising in the central Rocky Mountains in the U.S., the river flows generally southwest across the Colorado Plateau before reaching Lake Mead on the Arizona–Nevada line, where it turns south towards the international border. After entering Mexico, the Colorado forms a large delta, emptying into the Gulf of California between Baja California and Sonora.</p>
+				</div>
+				<div class="box w-50 h-40 title-top box-img-right" data-lat="49.152428" data-lng="20.081208" data-heading="300" data-pitch="5" data-sound="pleso.ogg">
+					<div class="img-cont img-pleso"></div>
+					<h3>Popradské pleso</h3>
+					<p>Popradske pleso is the glacier lake in the Mengusová valley in the High Tatras. This tarn is the rest of an glacier cavity, damed also with a side moraine of the Mengusovský glacier. Its elevation above sea-level is 1494 m, surface 6,88 ha, maximum lenght 380m and widht 248m, maximum depth 17m and maximum water temperature 16 °C. It is supplied with water of the Ladový stream from the Zlomisková valley. From tarn flows out the stream Krupá which after the conffluence with the Hincové stream forms the river Poprad. </p>
+				</div>
+			</div>
+			
+			<div class="f-page">
+				<div class="f-title">
+					<a></a>
+					<h2>Forest Collection</h2>
+					<a></a>
+				</div>
+				<div class="box w-70 h-50 box-b-r title-top box-img-left" data-lat="43.878017" data-lng="-103.458112" data-heading="64" data-pitch="10" data-sound="rushmore.ogg">
+					<div class="img-cont img-rushmore"></div>
+					<h3>Mount Rushmore National Memorial</h3>
+					<p>The Mount Rushmore National Memorial is a sculpture carved into the granite face of Mount Rushmore (Lakota Sioux name: Six Grandfathers) near Keystone, South Dakota, in the United States. Sculpted by Danish-American Gutzon Borglum and his son, Lincoln Borglum, Mount Rushmore features 60-foot (18 m) sculptures of the heads of four United States presidents.<br/><br/>Mount Rushmore has become an iconic symbol of presidential greatness and has appeared in works of fiction, and has been discussed or depicted in other popular works. It attracts nearly three million people annually.</p>
+				</div>
+				<div class="box w-30 h-50" data-lat="-2.945071" data-lng="-60.676237" data-heading="202" data-pitch="0" data-sound="amazon.ogg">
+					<div class="img-cont img-amazon"></div>
+					<h3>Amazon rainforest</h3>
+					<p>The Amazon rainforest, also known in English as Amazonia or the Amazon Jungle, is a moist broadleaf forest that covers most of the Amazon Basin of South America. This basin encompasses 7,000,000 square kilometres, of which 5,500,000 square kilometres are covered by the rainforest. This region includes territory belonging to nine nations.</p>
+				</div>
+				<div class="box w-30 h-50 box-b-r title-top" data-lat="41.376535" data-lng="-124.002946" data-heading="253" data-pitch="90" data-sound="redwood.ogg">
+					<h3>Redwood National Park</h3>
+					<p>The Redwood National Park is located along the coast of northern California and is home to the coast redwood (Sequoia sempervirens) old-growth forests, it protects 45% of all remaining coast redwood old-growth forests, totaling at least 38,982 acres. These tallest trees is one of hte most massive tree species on earth.</p>
+					<div class="img-cont img-redwood"></div>
+				</div>
+				<div class="box w-70 h-50 title-top box-img-right" data-lat="44.484179" data-lng="-110.872456" data-heading="255" data-pitch="15" data-sound="yellowstone.ogg">
+					<div class="img-cont img-yellowstone"></div>
+					<h3>Yellowstone National Park: Mystic Falls</h3>
+					<p>Yellowstone National Park is a national park located primarily in the U.S. state of Wyoming, although it also extends into Montana and Idaho. It was established by the U.S. Congress and signed into law by President Ulysses S. Grant on March 1, 1872. Yellowstone, widely held to be the first national park in the world, is known for its wildlife and its many geothermal features, especially Old Faithful Geyser, one of the most popular features in the park. It has many types of ecosystems, but the subalpine forest is most abundant. It is part of the South Central Rockies forests ecoregion.<br/><br/>Yellowstone National Park spans an area of 3,468.4 square miles, comprising lakes, canyons, rivers and mountain ranges. Yellowstone Lake is one of the largest high-altitude lakes in North America and is centered over the Yellowstone Caldera, the largest supervolcano on the continent.</p>
+				</div>
+			</div>
+			
+			<div class="f-page">
+				<div class="f-title">
+					<a></a>
+					<h2>Ocean&Shore Collection</h2>
+					<a></a>
+				</div>
+				<div class="box w-50 h-50 box-b-r box-img-left title-top" data-lat="19.951281" data-lng="-155.861352" data-heading="340" data-pitch="10" data-sound="fairmont.ogg">
+					<div class="img-cont img-fairmont"></div>
+					<h3>The Fairmont Orchid Hawaii</h3>
+					<p>The Big Island's Kohala coast is a popular visitor destination and is known for its nearly perfect weather, luxury oceanfront resorts, and the volcanic lava fields that surround it. <br/><br/>The history of Keawaiki Bay is preserved in archeological sites, lava formations, and footpaths leading everywhere from burial sites to cave complexes. The first to develop this region was Francis Hyde ʻĪʻī Brown, who is often referred to as the last chief. In 1972 Brown sold the resort to Mauna Lani Resort, and Kalahuipua'a was renamed Mauna Lani, which means “mountains reaching the heavens,” named in reverence to the five volcanic mountains that surround the Kohala region.</p>
+				</div>
+				<div class="box w-50 h-50 box-img-right title-top" data-lat="-0.712373" data-lng="-89.247116" data-heading="25" data-pitch="10" data-sound="san.ogg">
+					<div class="img-cont img-san"></div>
+					<h3>San Cristóbal Island Shoreline</h3>
+					<p>San Cristóbal (Chatham) is the easternmost island in the [[Galápagos Islands, in the eastern Pacific Ocean.|Galápagos archipelago]], as well as one of the oldest geologically. It is administratively part of San Cristóbal Canton, Ecuador. Its Spanish (and official Ecuadorian) name "San Cristóbal" comes from the patron saint of seafarers, St. Christopher. English speakers increasingly use that name in preference to the traditional English name of Chatham Island, derived from William Pitt, 1st Earl of Chatham.<br/><br/>The northeastern San Cristóbal Island shoreline is a beautiful place, which turquoise water, white sand beaches, rocky cliffs, and large populations of breeding birds.</p>
+				</div>
+				<div class="box w-50 h-50 box-img-right box-b-r title-top" data-lat="32.055759" data-lng="34.753894" data-heading="28" data-pitch="15" data-sound="jaffa.ogg">
+					<div class="img-cont img-jaffa"></div>
+					<h3>View from Jaffa</h3>
+					<p>View of the Tel Aviv Promenade from the old city of Jaffa. Jaffa is the southern, oldest part of Tel Aviv-Jaffa (since 1950), an ancient port city in Israel. Jaffa is famous for its association with the biblical stories of Solomon, Jonah, and Saint Peter.<br/><br/>Tel Yafo (Jaffa Hill) rises to a height of 40 meters (130 feet) and it offers a commanding view of the coastline. Hence it had a strategic importance in military history. The accumulation of debris and landfill over the centuries made the hill even higher. Archaeological evidence shows that Jaffa was inhabited some 7,500 years BCE. The natural harbor of Jaffa has been in use since the Bronze Age.</p>
+				</div>
+				<div class="box w-50 h-50 box-b-r title-top box-img-left" data-lat="-33.900399" data-lng="18.398968" data-heading="16" data-pitch="5" data-sound="mouille.ogg">
+					<div class="img-cont img-mouille"></div>
+					<h3>Mouille Point</h3>
+					<p>Mouille Point is an affluent suburb of Cape Town, situated between the V&A Waterfront to the east, Green Point to the south and the Atlantic Ocean to the north and west. The suburb hugs the coastline and is dominated by high-end apartment blocks.<br/><br/>It is a very small suburb, having only two major roads (Beach Road and Bay Road). It is home to the Mouille Point promenade, a paved promenade on the coast that is used daily by thousands of Capetonians. Behind it lies the Green Point Common, where numerous playing fields and a golf course are situated. The new Green Point Urban Park & Biodiversity Garden is just behind Mouille Point and has an entrance on Bay Road.</p>
+				</div>
+			</div>
+			
+			<div class="f-page f-cover-back">
+				<div id="codrops-ad-wrapper">
+					
+				</div>
+			</div>
+		</div>
+	
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jgestures.min.js"></script>
+		<script type="text/javascript">
+				
+			var $container 	= $( '#flip' ),
+				$pages		= $container.children().hide();
+			
+			Modernizr.load({
+				test: Modernizr.csstransforms3d && Modernizr.csstransitions,
+				yep : ['js/jquery.tmpl.min.js','js/jquery.history.js','js/core.string.js','js/jquery.touchSwipe-1.2.5.js','js/jquery.flips.js'],
+				nope: 'css/fallback.css',
+				callback : function( url, result, key ) {
+					
+					if( url === 'css/fallback.css' ) {
+						$pages.show();
+					}
+					else if( url === 'js/jquery.flips.js' ) {
+						$container.flips();
+					}
+			
+				}
+			});
+				
+		</script>
+	    <script type="text/javascript">
+		function initialize(lat, lng, heading, pitch) {
+		  var place = new google.maps.LatLng(lat, lng);
+		  var panoramaOptions = {
+		    position: place,
+		    pov: {
+		      heading: heading,
+		      pitch: pitch
+		    },
+		    zoom: 0,
+			autorotate: true
+		  };
+		  var myPano = new google.maps.StreetViewPanorama(
+		      document.getElementById('map-canvas'),
+		      panoramaOptions);
+		  
+		  myPano.setVisible(true);
+		  
+		  
+          var autorotate = window.setInterval(function() {
+			    var pov = myPano.getPov();
+			    pov.heading += 0.2;
+			    myPano.setPov(pov);
+			}, 10);
+	  
+		  $(window).on('mousedown', function(){
+		  	  clearInterval(autorotate);
+		  })
+		  
+		}
+		
+		// $(document).ready(function(){
+		// 	
+		// 	$("body").bind("webcamSwipeLeft", function(){
+		// 		console.log('left');
+		// 	});
+		// 	$("body").bind("webcamSwipeRight", function(){
+		// 		console.log('right');
+		// 	});
+		// 	window.initializeWebcamSwiper();
+		// })
+		
+	    </script>
+
+    </body>
+</html>
